@@ -35,7 +35,9 @@
 			// plugins
 			plugins: [Markdown, Highlight, Math.KaTeX, Notes],
 			// slide controls
-			controls: true,
+			controls: false,
+			// linear navigation (right arrow = next fragment/slide, not next chapter)
+			navigationMode: 'linear',
 			// slide progress bar
 			progress: true,
 			// slide transition

@@ -6,7 +6,7 @@
 	options={{
 		history: true,
 		transition: 'slide',
-		controls: true,
+		controls: false,
 		progress: true,
 		hash: true,
 		center: true

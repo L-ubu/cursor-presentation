@@ -9,7 +9,7 @@
 	const donts = [
 		{ icon: '🔑', text: 'Paste passwords, API keys, or secrets', sub: '' },
 		{ icon: '🏗️', text: 'Let it make architectural decisions without your input', sub: '' },
-		{ icon: '🔓', text: 'Use it for security-critical logic without expert review', sub: 'ask Bonzai how that went' },
+		{ icon: '🔓', text: 'Use it for security-critical logic without expert review', sub: '' },
 		{ icon: '🗄️', text: 'Run generated SQL on production databases', sub: '' },
 		{ icon: '📤', text: 'Share proprietary client code on public models', sub: '' },
 	]

@@ -4,7 +4,7 @@
 </script>
 
 <script>
-	import { onMount } from 'svelte'
+	import { Action } from '$lib/index.js'
 	import { tween } from '@animotion/motion'
 
 	let iStroke = tween(0, { duration: 800 })
@@ -13,10 +13,8 @@
 	let glowRadius = tween(0, { duration: 600 })
 	let bulbOpacity = tween(0, { duration: 500 })
 	let textOpacity = tween(0, { duration: 600 })
-	let slideEl
 
 	async function playAnimation() {
-		iStroke.reset(); dotScale.reset(); oStroke.reset(); glowRadius.reset(); bulbOpacity.reset(); textOpacity.reset()
 		await iStroke.to(1)
 		await dotScale.to(1)
 		await oStroke.to(1)
@@ -25,27 +23,18 @@
 		await textOpacity.to(1)
 	}
 
-	onMount(() => {
-		const section = slideEl.closest('section')
-		section.addEventListener('in', playAnimation)
-
-		function onFirstClick() {
-			playAnimation()
-			document.removeEventListener('click', onFirstClick)
-			document.removeEventListener('keydown', onFirstClick)
-		}
-		document.addEventListener('click', onFirstClick)
-		document.addEventListener('keydown', onFirstClick)
-
-		return () => {
-			section.removeEventListener('in', playAnimation)
-			document.removeEventListener('click', onFirstClick)
-			document.removeEventListener('keydown', onFirstClick)
-		}
-	})
+	async function resetAnimation() {
+		iStroke.reset(); dotScale.reset(); oStroke.reset(); glowRadius.reset(); bulbOpacity.reset(); textOpacity.reset()
+	}
 </script>
 
-<div class="divider-slide" style="justify-content: center; gap: 0;" bind:this={slideEl}>
+<Action
+	actions={[
+		async () => { await playAnimation() },
+	]}
+/>
+
+<div class="divider-slide" style="justify-content: center; gap: 0;">
 	<!-- iO logo animation -->
 	<svg width="220" height="160" viewBox="0 0 220 160" style="overflow: visible;">
 		<defs>
