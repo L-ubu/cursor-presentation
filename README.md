@@ -6,6 +6,8 @@
 
 https://github.com/animotionjs/animotion/assets/38083522/da098a66-d2bb-4109-bc56-510894196d96
 
+![Screenshot](assets/screenshot.png)
+
 ## Animotion
 
 Animotion is a presentational framework for creating beautiful slides and visualizing ideas with code using [Svelte](https://svelte.dev/), [Reveal.js](https://revealjs.com/) and [Tailwind CSS](https://tailwindcss.com/).
